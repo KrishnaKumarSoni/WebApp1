@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>edit account</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		.data{
+			position: absolute;
+			line-height: 30px;
+			font-size: 20px; 
+			top: 30%;
+			left: 10%;
+		}
+		.button{
+			position: relative;
+			margin-top: 20px;
+		}
+		.Editbutton{
+			background-color: #026612;
+			opacity: 0.9;
+			margin-left: 5px;
+			color: white;
+			border: none;
+			height: 30px;
+			width: 80px;
+			font-size: 16px;
+			border-radius: 3px;
+			border: 1px solid #04440e;
+		}
+		.Editbutton:hover{
+			background-color: #007213;
+			font-weight: bold;
+		}
+		input{
+			width: 250px;
+			height: 20px;
+			border-radius: 3px;
+			padding-left: 5px; 
+			border: 1px solid rgba(0, 0, 0, 0.3);
+		}
+	</style>
+</head>
+<body>
+	<form class="data" method='POST'>
+		<table style="width:100%">
+		    <tr>
+		        <td><strong>Name</strong></td>
+		        <td>: </td>
+		        <td> {{name}}</td> 
+		    </tr>
+		     <tr>
+		    	<td><strong>Username</strong></td>
+		    	<td>: </td>
+		    	<td> {{username}}</td> 
+		    </tr>
+		    <tr>
+		    	<td><strong>Email Address</strong></td>
+		    	<td>: </td>
+		    	<td> <input type="email" name="emailid" required></td> 
+		    </tr>
+		    <tr>
+		    	<td><strong>Contact Number</strong></td>
+		    	<td>: </td>
+		    	<td> <input type="text" name="phonenumber" required></td> 
+		    </tr>
+		</table>
+		<div class="button">
+			<input class="Editbutton" type="submit" name="submit" value="Update">
+		</div>
+	</form>
+</body>
+</html>

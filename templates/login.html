@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='signup.css')}}">
+</head>
+<body>
+	<div class="login-page">
+	  <div class="form">
+	    <form class="login-form" method="POST" action="">
+	      <input type="text" placeholder="username" name="username" />
+
+	      <input type="password" placeholder="Password" name="password" />
+
+	      <input type="submit" name="submit" value="submit" class="submitButton">
+	      {% with message=get_flashed_messages()%}
+			{%if message%}
+				<div class="message" style="color: red">
+					{{message}}
+				</div> 
+			{%endif%}
+		  {%endwith%}
+	      <p class="message">Not Registered? <a href="{{url_for('signup')}}"> Sign Up</a></p>
+	    </form>
+	  </div>
+	</div>
+</body>
+</html>
+

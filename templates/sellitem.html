@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sell an Item</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			font-family: 'Montserrat', sans-serif;
+		}
+		.sellingForm{
+			position: absolute;
+			top: 20%;
+			left: 10%;
+		}
+		tr{
+			line-height: 30px;
+		}
+		textarea{
+			height: 100px;
+			width: 300px;
+			padding-left: 5px;
+			font-family: 'Montserrat', sans-serif;
+			background-color: rgba(0, 141, 0, 0.1);
+			border: none;
+		}
+		.inputBox{
+			width: 300px;
+			height: 25px;
+			padding-left: 5px;
+			font-family: 'Montserrat', sans-serif;
+			background-color: rgba(0, 141, 0, 0.1);
+			border: none;
+		}
+		select{
+			height: 25px;
+			width: 300px;
+			font-family: 'Montserrat', sans-serif;
+			background-color: green;
+			border: none;
+			padding-left: 5px;
+			line-height: 18px;
+			font-size: 17px;
+			color: white;
+		}
+		.submit-btn{
+			background-color: #026612;
+			opacity: 0.9;
+			margin-left: 5px;
+			color: white;
+			border: none;
+			height: 30px;
+			width: 80px;
+			font-size: 16px;
+			border-radius: 3px;
+			border: 1px solid #04440e;
+			margin-top: 30px;
+		}
+		.submit-btn:hover{
+			background-color: #007213;
+			font-weight: bold;
+		}
+		.heading{
+			font-weight: 700;
+			font-size: 40px;
+			margin-left: 10%;
+			position: absolute;
+			color: #104910;
+			top: 30px;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="heading">What do you want to sell today?</h1>	
+	<div class="sellingForm">
+	<form method="POST">
+		<table>
+			<tr>
+				<td>Category: </td>
+				<td><select name="catagory">
+					<option value="vehicles">Vehicles</option>
+					<option value="furniture">Furniture</option>
+					<option value="crafts">Crafts</option>
+					<option value="electronics">Electronics</option>
+					<option value="books">Books</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Item Name: </td>
+				<td><input class="inputBox" type="text" name="itemname" placeholder="A catchy title will attract more viewers" required></td>
+			</tr>
+			<tr>
+				<td>Item Details: </td>
+				<td><textarea name="itemdetails" placeholder="Try to keep it short and simple (300 characters at max.)" maxlength="300" required></textarea></td>
+			</tr>
+			<tr>
+				<td>Price: </td>
+				<td><input class="inputBox" type="text" name="price" placeholder="Enter a tentative Price in INR" required></td>
+			</tr>
+			<tr>
+				<td>City: </td>
+				<td><input class="inputBox" type="text" name="city" placeholder="Enter the city name" required></td>
+			</tr>
+			<tr>
+				<td>State: </td>
+				<td><input class="inputBox" type="text" name="state" placeholder="Enter the State name" required></td>
+			</tr>
+		</table>
+		<input type="submit" name="submitAd" value="Submit" class="submit-btn">
+	</form>
+	</div>
+</body>
+</html>

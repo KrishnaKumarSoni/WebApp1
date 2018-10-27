@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signup</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='signup.css')}}">
+</head>
+<body>
+	<div class="login-page">
+	  <div class="form">
+	    <form class="login-form" method="POST" action="">
+	      <input type="text" placeholder="Username Name" name="username" />
+	      
+	      <input type="text" placeholder="Name" name="name" />
+
+	      <input type="tel" placeholder="Contact Number" name="phonenumber" />
+
+	      <input type="password" placeholder="Password" name="password" />
+
+	      <input type="password" placeholder="Confirm password" name="confirmPassword" />
+
+	      <input type="text" placeholder="Email address" name="emailid" />
+
+	      <input type="submit" name="submit" value="submit" class="submitButton">
+	     
+	      {% with message=get_flashed_messages()%}
+			{%if message%}
+				<div class="message" style="color: red">
+					{{message}}
+				</div> 
+			{%endif%}
+		  {%endwith%}
+	      <p class="message">Already registered? <a href="{{url_for('login')}}"> Login</a></p>
+	    </form>
+	  </div>
+	</div>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>signup</title>
+</head>
+<body>
+	<div>
+		<form method="POST" action="">
+			<div class="formElement">
+				<input type="text" name="username" required placeholder="Username">
+			</div>
+			<div class="formElement">
+				<input type="tel" name="phonenumber" required placeholder="Contact Number">
+			</div>
+			<div class="formElement">
+				<input type="email" name="emailid" required placeholder="Email">
+			</div>
+			<div class="formElement">
+				<input type="password" name="password" required placeholder="Password">
+			</div>
+			<div class="formElement">
+				<input type="password" name="confirmPassword" required placeholder="Confirm Password">
+			</div>
+			<div><input type="submit" name="sumbit"></div>
+			{% with message=get_flashed_messages()%}
+				{%if message%}
+					{{message}}
+				{%endif%}
+			{%endwith%}
+		</form>
+		<div class="statement1">
+			already registered? <a href="{{url_for('login')}}">Login.</a> 
+		</div>
+	</div>
+</body>
+</html> -->

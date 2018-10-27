@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cab sharing</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			font-family: 'Montserrat', sans-serif;
+		}
+		input:focus, textarea {
+    		outline: none !important;
+		}
+		select:focus, textarea {
+    		outline: none !important;
+		}
+
+		.cabsearch{
+			margin-left: 10%;
+			position: absolute;
+			top: 30%; 
+		}
+		.heading{
+			position: absolute;
+			margin-left: 10%;
+			top: 14%;
+			color: #104910;
+			font-size: 40px;
+		}
+		.inputBox{
+			height: 25px;
+			width: 300px;
+			padding-left: 40px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			font-size: 16px;
+			border-radius: 22.5px;
+			font-family: 'Montserrat', sans-serif;
+			margin-left: 40px;
+			margin-top: 20px;
+			background-color: rgba(0, 141, 0, 0.1);
+			border: none;
+		}
+		.labels{
+			font-size: 22px;
+			margin-top: 40px;
+			font-weight: 700;
+		}
+
+		.cityoptions{
+			height: 45px;
+			width: 340px;
+			padding-left: 40px;
+			padding-right: 40px;
+			background-color: rgba(0, 141, 0, 0.1);
+			font-size: 16px;
+			border: none;
+			border-radius: 22.5px;
+			font-family: 'Montserrat', sans-serif;
+			margin-left: 40px;
+			margin-top: 20px;
+		}
+		.submit-btn{
+			background-color: #026612;
+			opacity: 0.9;
+			margin-left: 5px;
+			color: white;
+			border: none;
+			height: 30px;
+			width: 80px;
+			font-size: 16px;
+			border-radius: 3px;
+			border: 1px solid #04440e;
+			margin-top: 30px;
+		}
+		.submit-btn:hover{
+			background-color: #007213;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+
+	<h1 class="heading">search a cab</h1>
+	<form class="cabsearch" method="POST">
+		<table>
+			<tr>
+				<td><span class="labels">Journey Date: </span></td>
+				<td><input class="inputBox" type="date" name="date" placeholder="Enter the journey date" required ></td>
+			</tr>
+			<tr>
+				<td><span class="labels">Journey Time: </span></td>
+				<td><input class="inputBox" type="time" name="time" placeholder="Enter the tentative time of journey" required></input></td>
+			</tr>
+			
+			<tr>
+				<td><span class="labels">Leaving from: </span></td>
+				<td>
+					<select class="cityoptions" name="leavingfrom">
+						{% for i in cities %}
+							<option value="{{i['cities']}}">{{i['cities']}}</option>
+						{% endfor %}
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><span class="labels">Going to: </span></td>
+				<td>
+					<select class="cityoptions" name="goingto">
+						{% for i in cities %}
+							<option value="{{i['cities']}}">{{i['cities']}}</option>
+						{% endfor %}
+					</select>
+				</td>
+			</tr>
+		</table>
+		<input type="submit" name="submit" class="submit-btn">
+	</form>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Account</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet">
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		.data{
+			position: absolute;
+			line-height: 30px;
+			font-size: 20px; 
+			top: 30%;
+			left: 10%;
+		}
+		.button{
+			position: relative;
+			margin-top: 20px;
+		}
+		.Editbutton{
+			background-color: #007213;
+			opacity: 0.9;
+			margin-left: 5px;
+			color: white;
+			border: none;
+			height: 30px;
+			width: 60px;
+			font-size: 16px;
+			border-radius: 3px;
+			border: 1px solid #04440e;
+		}
+		.heading{
+			font-weight: 800;
+			font-size: 60px;
+			margin-left: 10%;
+			position: absolute;
+			color: #104910;
+			top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="heading">{{username}}'s account,</h1>
+	<div class="data">
+		
+		<table style="width:100%">
+		    <tr>
+		        <td><strong>Name</strong></td>
+		        <td>: </td>
+		        <td> {{name}}</td> 
+		    </tr>
+		     <tr>
+		    	<td><strong>Username</strong></td>
+		    	<td>: </td>
+		    	<td> {{username}}</td> 
+		    </tr>
+		    <tr>
+		    	<td><strong>Email Address</strong></td>
+		    	<td>: </td>
+		    	<td> {{emailid}}</td> 
+		    </tr>
+		    <tr>
+		    	<td><strong>Contact Number</strong></td>
+		    	<td>: </td>
+		    	<td> {{phonenumber}}</td> 
+		    </tr>
+		</table>
+		<div class="button">
+			<a href="{{url_for('editaccounts')}}"><button class="Editbutton">Edit</button></a>
+		</div>
+	</div>
+	
+</body>
+</html>

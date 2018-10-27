@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>homepage</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='homepage.css')}}">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a>Home</a></li>
+			<li><a href="{{url_for('cabsharesearch')}}">Cab Sharing</a></li>
+			<li><a>Categories</a>
+				<ul>
+					<li><a href="{{url_for('vehicles')}}">Vehicles</a></li>
+					<li><a>Crafts</a></li>
+					<li><a>Furniture</a></li>
+					<li><a>Electronics</a></li>
+					<li><a>Books</a></li>
+				</ul>
+			</li>
+			<li><a href="{{url_for('sellitem')}}">Sell item</a></li>
+			<li><a>Contact us</a></li>
+			<li><a>About</a></li>
+			<li><a>Settings</a>
+				<ul>
+					<li><a href="{{url_for('logout')}}">Log out</a></li>
+					<li><a href="{{url_for('myaccount')}}">My account</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</body>
+</html>
