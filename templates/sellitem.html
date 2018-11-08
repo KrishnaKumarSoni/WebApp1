@@ -70,12 +70,16 @@
 			color: #104910;
 			top: 30px;
 		}
+		form span{
+			color:grey;
+			font-size: 12px
+		}
 	</style>
 </head>
 <body>
 	<h1 class="heading">What do you want to sell today?</h1>	
 	<div class="sellingForm">
-	<form method="POST">
+	<form method="POST" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<td>Category: </td>
@@ -101,13 +105,28 @@
 			</tr>
 			<tr>
 				<td>City: </td>
-				<td><input class="inputBox" type="text" name="city" placeholder="Enter the city name" required></td>
+				<td>
+					<select name="city">
+						{% for i in cities %}
+							<option value="{{i['cities']}}">{{i['cities']}}</option>
+						{% endfor %}
+					</select>
+				</td>
 			</tr>
 			<tr>
 				<td>State: </td>
 				<td><input class="inputBox" type="text" name="state" placeholder="Enter the State name" required></td>
 			</tr>
+			<tr>
+				<td>Upload image: </td>
+				<td>
+					<input type="file" name="photo" class="inputBox">
+				</td>
+			</tr>
+			<tr>
+			</tr>
 		</table>
+		<span>A catchy image often attracts buyers <br></span>
 		<input type="submit" name="submitAd" value="Submit" class="submit-btn">
 	</form>
 	</div>

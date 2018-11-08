@@ -21,6 +21,7 @@
 		.button{
 			position: relative;
 			margin-top: 20px;
+			float: left;
 		}
 		.Editbutton{
 			background-color: #007213;
@@ -41,6 +42,19 @@
 			position: absolute;
 			color: #104910;
 			top: 50px;
+		}
+		.ads{
+			float: left;
+			margin-left: 20px;
+			margin-top: 2px;
+			height: 30px;
+			width: 100px;
+		}
+		.cabs{
+			width: 160px;
+		}
+		button{
+			cursor: pointer;
 		}
 	</style>
 </head>
@@ -72,6 +86,12 @@
 		</table>
 		<div class="button">
 			<a href="{{url_for('editaccounts')}}"><button class="Editbutton">Edit</button></a>
+		</div>
+		<div class="button">
+			<a href="{{url_for('myads')}}"><button class="Editbutton ads">My Ads</button></a>
+		</div>
+		<div class="button">
+			<a href="{{url_for('mycabshares')}}"><button class="Editbutton ads cabs">My Cab Shares</button></a>
 		</div>
 	</div>
 	

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>myAds</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+	<style type="text/css">
+		.wrapper{
+			position: absolute;
+			top: 20%;
+			left: 10%;
+		}
+		td{
+			width: 150px;
+			height: 30px;
+		}
+		body{
+		    counter-reset: Serial;           /* Set the Serial counter to 0 */
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		table{
+		    border-collapse: separate;
+		    text-align: center;
+		}
+
+		tr td:first-child:before{
+		  counter-increment: Serial;      /* Increment the Serial counter */
+		  content: "" counter(Serial); /* Display the counter */
+		}
+		button{
+			color: #c41700;
+			font-size: 22px;
+			background: transparent;
+			cursor: pointer;
+			border: none;
+		}
+		button:focus{
+			outline: none;
+		}
+		.tableheading{
+			font-size: 16px;
+			font-weight: 700;
+		}
+		.heading{
+			position: absolute;
+			top: -30%;
+			left: 8%;
+			font-size: 32px;
+			font-weight: 700;
+			color: #104910;
+			border-bottom: 6px solid #ffbc21; 
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<span class="heading">My Ads</span>
+		<div class="container">
+			<form method="POST">
+			<table>
+				<th>
+					<td class="tableheading">Item name</td>
+					<td class="tableheading">Price</td>
+					<td class="tableheading">Category</td>
+					<td class="tableheading">Delete Item</td>
+				</th>
+			{%for i in result%}
+				<tr>
+					<td class="tableheading">.</td>
+					<td>{{i['itemname']}}</td>
+					<td>&#x20b9 {{i['price']}}</td>
+					<td>{{i['catagory']}}</td>
+					<td><button type="submit" name="primarykey" value="{{i['primarykey']}}">&#x2718</button></td>
+				</tr>
+			{%endfor%}
+			</table>
+			</form>	
+		</div>
+	</div>
+</body>
+</html>

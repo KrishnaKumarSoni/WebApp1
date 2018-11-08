@@ -116,6 +116,13 @@
 					</select>
 				</td>
 			</tr>
+			{% with message=get_flashed_messages()%}
+			{%if message%}
+				<div class="message" style="color: #ffc2a8">
+					{{message}}
+				</div> 
+			{%endif%}
+		  {%endwith%}
 		</table>
 		<input type="submit" name="submit" class="submit-btn">
 	</form>

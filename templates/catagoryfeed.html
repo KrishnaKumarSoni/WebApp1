@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+	<title>{{title}}</title>
+	<style type="text/css">
+		body{
+			font-family: 'Montserrat', sans-serif;
+		}
+		.wrap1{
+			position: absolute;
+		}
+		.itemimages{
+			width: 300px;
+			height: auto;
+			position: relative;
+		}
+		.itemdisplay{
+			height: auto;
+			width: 300px;
+			display: inline-block;
+			vertical-align: top;
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+			margin: 30px;
+			transition: 0.3s;
+		}
+		.itemdisplay:hover{
+			box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3);
+		}
+		ul{
+			list-style-type: none;
+		}
+		.itemdisplay ul li{
+			padding-top: 5px;
+		}
+		.details{
+			position: relative;
+			text-align: left;
+			bottom: 0px;
+			text-transform: uppercase;
+		}
+		.title{			
+			font-weight: 700;
+			font-size: 22px;
+			color: #ffbc21;
+		}
+		button{
+			border: none;
+			background: transparent;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body><form method="POST">
+	<div class="wrap1">
+	{%for i in result%}
+		<div class="itemdisplay">
+			<img src="{{url_for('static', filename=i['imagepath'])}}" class="itemimages">
+			<div class="details">
+				<ul>
+					<li class="title"><button type="submit" name="key" value="{{i['primarykey']}}" class="title">{{i['itemname']}}</button></li>
+					<li>&#x20b9 {{i['price']}}</li>
+				</ul>
+			</div>
+				
+		</div>
+	{%endfor%}
+	</div></form>	
+</body>
+</html>

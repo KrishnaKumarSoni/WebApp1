@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cabs</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+	<style type="text/css">
+		.wrapper{
+		}
+		body{
+			font-family: 'Montserrat', sans-serif;
+		}
+		.tableheading{
+			font-weight: 700;
+			font-size: 22px;
+		}
+		.container{
+			position: relative;
+			top:100px;
+			left: 2%;;
+		}
+		td{
+			width: 150px;
+			max-width: 200px;
+			text-align: center;
+			border: 1px solid black;
+		}
+		.heading{
+			position: relative;
+			font-size: 32px;
+			font-weight: 700;
+			color: #104910;
+			border-bottom: 6px solid #ffbc21; 
+			float: left;
+		}
+		.button{
+			position: relative;
+			float: right;
+			height: 20px;
+			width: 200px;
+			border: none;
+			color: #ffbc21;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 14px;
+			cursor: pointer;
+			top: 15px;
+			border-bottom: 2px solid #104910;
+		}
+		.titles{
+			position: absolute;
+			width: 57%;
+			left: 2%;
+			top: 50px;
+		}
+		a{
+			text-decoration: none;
+		}
+		.cabnumber{
+			width: 50px;
+			font-weight: 700;
+			font-size: 22px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="titles">
+			<span class="heading">cabs leaving at: {{result[0]['journeydate']}}</span>
+			<a href="{{url_for('createcabshare')}}" class="button">click here to create cab share</a>
+		</div>
+		<div class="container">
+			<table>
+				<tr>
+					<th class="cabnumber">Cab Number</th>
+					<th class="tableheading">Leaving at</th>
+					<th class="tableheading">Going from</th>
+					<th class="tableheading">Going to</th>
+					<th class="tableheading">Number of available seats.</th>
+					<th class="tableheading">Owner</th>
+					<th class="tableheading">Phonenumber</th>
+				</tr>
+
+				{% for i in result %}
+					<tr>
+						<td class="cabnumber">{{i['cabnumber']}}</td>
+						<td>{{i['journeytime']}}</td>
+						<td>{{i['leavingfrom']}}</td>
+						<td>{{i['goingto']}}</td>
+						<td>{{i['numberofseats']}}</td>
+						<td>{{i['ownername']}}</td>
+						<td>{{i['phonenumber']}}</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+</body>
+</html>

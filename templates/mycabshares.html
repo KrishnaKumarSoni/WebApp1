@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>my cab shares</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+	<style type="text/css">
+		.wrapper{
+			position: absolute;
+			top: 20%;
+			left: 10%;
+		}
+		td{
+			width: 150px;
+			height: 30px;
+		}
+		body{
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		table{
+		    border-collapse: separate;
+		    text-align: center;
+		}
+
+		button{
+			font-size: 22px;
+			background: transparent;
+			cursor: pointer;
+			border: none;
+			font-weight: 700;
+		}
+		button:focus{
+			outline: none;
+		}
+		.tableheading{
+			font-size: 16px;
+			font-weight: 700;
+		}
+		.heading{
+			position: absolute;
+			top: -30%;
+			left: 8%;
+			font-size: 32px;
+			font-weight: 700;
+			color: #104910;
+			border-bottom: 6px solid #ffbc21; 
+		}
+		.minus{
+			color: #c41700;
+		}
+		.plus{
+			color: #104109;	
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<span class="heading">My Cab shares</span>
+		<div class="container">
+			<form method="POST">
+			<table>
+				<tr>
+					<th>cab number</th>
+					<th>source</th>
+					<th>destination</th>
+					<th>time</th>
+					<th>date</th>
+					<th>number of empty seats</th>
+					<th>change seats</th>
+				</tr>
+				{%for i in result%}
+					<tr>
+						<td>{{i['cabnumber']}}</td>
+						<td>{{i['leavingfrom']}}</td>
+						<td>{{i['goingto']}}</td>
+						<td>{{i['journeytime']}}</td>
+						<td>{{i['journeydate']}}</td>
+						<td>{{i['numberofseats']}}</td>
+						<td>
+							<form method="POST">
+								<button class="button plus" value="{{i['cabnumber']}}_add" name='seats'>+</button>
+								<button class="button minus" value="{{i['cabnumber']}}_subtract" name='seats'>-</button>
+							</form>
+						</td>
+					</tr>
+				{% endfor %}
+			</table>
+			</form>	
+		</div>
+	</div>
+</body>
+</html>
